@@ -4,6 +4,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">  
 <title>SRW PDF TOOLS</title>  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>  <style>  
 *{box-sizing:border-box}  
+ <link rel="manifest" href="./manifest.json">
+<meta name="theme-color" content="#111827">
+ <script>
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("./sw.js")
+      .then(() => console.log("SRW App Ready"))
+      .catch(error => console.log("SW Error:", error));
+  });
+}
+</script>
 body{margin:0;font-family:Arial,sans-serif;background:#eef2f7;color:#172033}  
 header{background:#071b3d;color:white;text-align:center;padding:17px 8px;font-size:23px;font-weight:bold}  
 .moving-patti{display:flex;align-items:center;height:68px;overflow:hidden;background:#071b3d;border-bottom:3px solid #e5ae32}  
