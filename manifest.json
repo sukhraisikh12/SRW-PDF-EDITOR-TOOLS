@@ -1,13 +1,15 @@
-
 {
+  "id": "./",
   "name": "SRW PDF TOOLS",
   "short_name": "SRW PDF",
+  "description": "SRW PDF TOOLS - PDF Compress, PDF to Image and Image to PDF",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
   "orientation": "portrait",
   "background_color": "#111827",
   "theme_color": "#111827",
+  "lang": "hi",
   "icons": [
     {
       "src": "./icon-512.png",
