@@ -1,5 +1,5 @@
 
-const CACHE_NAME = "srw-pdf-tools-v1";
+const CACHE_NAME = "srw-pdf-tools-v2";
 
 const FILES_TO_CACHE = [
   "./",
@@ -32,9 +32,15 @@ self.addEventListener("activate", event => {
 self.addEventListener("fetch", event => {
   if (event.request.method !== "GET") return;
 
+  const url = new URL(event.request.url);
+
+  if (url.origin !== self.location.origin) return;
+
   event.respondWith(
     caches.match(event.request).then(cached => {
-      return cached || fetch(event.request);
+      if (cached) return cached;
+
+      return fetch(event.request);
     })
   );
 });
